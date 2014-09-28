@@ -15,7 +15,7 @@ import io
 #class containing the message need structure
 #class variables in portuguese to differ from enters
 class message:
-	def __init__(self,hour,date,send,reciver,text):
+	def __init__(self,hour,date,sender,recipient,text):
 		self.data = date
 		self.hora = hour
 		self.rem = sender
@@ -29,7 +29,7 @@ class message:
 def read(fileName,outName):
 	allMsg = []
 	i = 0
-	tree = ET.parse(nomeArquivo)
+	tree = ET.parse(fileName)
 	root = tree.getroot()
 	
 	for mens in root.findall('Message'):
@@ -41,7 +41,7 @@ def read(fileName,outName):
 #Function that generate the out file
 def save(list,outName):
 	if(len(list) > 0):
-		file = io.open("Out.txt","w",encoding="utf8")
+		file = io.open(outName,"w",encoding="utf8")
 		for l in list:
 			file.write(unicode(l))
 		file.close()
