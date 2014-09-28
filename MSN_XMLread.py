@@ -62,8 +62,12 @@ def excludeHTML(s):
 
 #Main
 if __name__ == "__main__":
-	arq = raw_input("Type the name of the out file with the '.xml' extension:")
-	out = raw_input("Type the name of the out file with the '.txt' extension:")
+	print "\n\t\tMSN XML READER\n"
+	print "\nThis program makes a .txt from a old MSN XML file.\n"
+	arq = raw_input("Type the name of the out file without the '.xml' extension:")
+	arq = "".join((arq,".xml"))
+	out = raw_input("Type the name of the out file without the '.txt' extension:")
+	out = "".join((out,".txt"))
 	read(arq,out)
 
 		
